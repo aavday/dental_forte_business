@@ -5,8 +5,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
     <footer class="footer sticky_footer">
       <div class="container">
         <div class="footer__wrapper">
-          <p class="copyright"> &copy; 2021 DENTAL FORTE управляющая компания. Все права защищены.</p><a class="itchelny" href="https://www.itchelny.ru/">
-            <p>Создание и поддержка –</p><img src="<?=SITE_TEMPLATE_PATH?>/images/icons/itchelny-icon.png" alt="Логотип ITChelny"/></a>
+          <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+              "AREA_FILE_SHOW" => "file",
+              "PATH" => "/includes/footer/copyright.html"
+            )
+          );?>
+          <a class="itchelny" href="https://www.itchelny.ru/">
+            <p>Создание и поддержка –</p><img src="<?=SITE_TEMPLATE_PATH?>/images/icons/itchelny-icon.png" alt="Логотип ITChelny"/>
+          </a>
         </div>
       </div>
     </footer>

@@ -26,13 +26,27 @@ $APPLICATION->SetTitle('Dental Forte');
 		<h4 class="subtitle subtitle-mobile"><span><a href="#">О компании</a></span></h4>
 		<div class="row">
 			<div class="col-lg-5 col-xl-6">
-				<div class="about-img"><img src="<?=SITE_TEMPLATE_PATH?>/images/about-front-img.jpg" alt="Картинка о компании"/></div>
+				<div class="about-img">
+					<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+						"AREA_FILE_SHOW" => "file",
+						"PATH" => "/includes/main_page/about_img.html"
+						)
+					);?>
+				</div>
 			</div>
 			<div class="col-lg-7 col-xl-6">
 				<div class="about-right">
 					<h4 class="subtitle"><span><a href="#">О компании</a></span></h4>
-					<p>Качественный контент — это уважение к пользователю, показатель уровня работы компании. Если это текст, в нем не должно быть смысловых или грамматических ошибок, он должен быть правильно оформлен, структурирован. Видеоматериалы готовят, контролируя качество видеоряда и озвучивания, монтажа, сведения. Графика, изображения, фото должны быть четкими, иметь хорошее разрешение. Для каждого типа контента действует свой набор требований по качеству, и важно соблюдать их.</p>
-					<button class="dental-btn-small">Подробнее </button>
+					<p>
+						<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+							"AREA_FILE_SHOW" => "file",
+							"PATH" => "/includes/main_page/about_text.html"
+							)
+						);?>
+					</p>
+					<a href="#">
+						<button class="dental-btn-small">Подробнее</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -121,8 +135,28 @@ $APPLICATION->SetTitle('Dental Forte');
 <section class="contact">
 	<div class="container"> 
 		<div class="contact__block">
-			<h3 class="contact__block__title">Контакты </h3>
-			<h4 class="contact__block__town"><b>г. Набережные Челны,</b><br> Новый город,<br> бульвар Г. Камала, 24 А (27/04 А)</h4><a class="contact__block__phone" href="tel:88552202726">8 8552 20 27 26</a><br><a class="contact__block__mail" href="mailto:mail@mail.ru">mail@mail.ru</a><br>
+			<h3 class="contact__block__title">Контакты</h3>
+			<h4 class="contact__block__town">
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+					"AREA_FILE_SHOW" => "file",
+					"PATH" => "/includes/contacts/address.html"
+					)
+				);?>
+			</h4>
+			<a class="contact__block__phone" href="tel:<?include($_SERVER["DOCUMENT_ROOT"] . "/includes/common/phone.html")?>">
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+					"AREA_FILE_SHOW" => "file",
+					"PATH" => "/includes/common/phone.html"
+					)
+				);?>
+			</a><br>
+			<a class="contact__block__mail" href="mailto:<?include($_SERVER["DOCUMENT_ROOT"] . "/includes/common/mail.html")?>">
+				<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+					"AREA_FILE_SHOW" => "file",
+					"PATH" => "/includes/common/mail.html"
+					)
+				);?>
+			</a><br>
 			<button class="dental-btn contact__block__btn" data-toggle="modal" data-target="#feedbackModal">Заказать звонок</button>
 		</div>
 	</div>

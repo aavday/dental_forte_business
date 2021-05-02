@@ -31,7 +31,14 @@ use Bitrix\Main\Page\Asset;
     <header class="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
-          <div class="header__right"><a class="logo" href="/"><img class="logo-img" src="<?=SITE_TEMPLATE_PATH?>/images/logo.png" alt="Логотип компании"/><img class="logo-img-mobile" src="<?=SITE_TEMPLATE_PATH?>/images/logo-mobile.png" alt="Логотип компании"/></a>
+          <div class="header__right">
+            <a class="logo" href="/">
+              <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                  "AREA_FILE_SHOW" => "file",
+                  "PATH" => "/includes/header/logo.html"
+                )
+              );?>
+            </a>
             <div class="collapse navbar-collapse" id="navbarHeader">
               <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#">О нас</a></li>
@@ -41,23 +48,128 @@ use Bitrix\Main\Page\Asset;
               </ul>
               <div class="header__mobile">
                 <div class="header__town">
-                  <h5 class="header__town__current">Набережные Челны</h5><a class="header__town__address" href="#">бул. Г. Камала, 24а (27/04 а)</a>
+                  <h5 class="header__town__current">
+                    <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/includes/header/city.html"
+                      )
+                    );?>
+                  </h5>
+                  <a class="header__town__address" href="#">
+                    <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/includes/header/address.html"
+                      )
+                    );?>
+                  </a>
                 </div>
-                <div class="header__phone"><a class="header__phone__number" href="tel:88552202726">8 8552 20 27 26</a>
+                <div class="header__phone">
+                  <a class="header__phone__number" href="tel:<?include($_SERVER["DOCUMENT_ROOT"] . "/includes/common/phone.html")?>">
+                    <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/includes/common/phone.html"
+                      )
+                    );?>
+                  </a>
                   <button class="dental-btn header__phone__btn" data-toggle="modal" data-target="#feedbackModal">Заказать звонок</button>
                 </div>
-                <div class="header__social"><a class="header__social__link instagram-link" href="#"></a><a class="header__social__link vk-link" href="#"></a></div>
+                <div class="header__social">
+                  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/includes/header/instagram.html"
+                      )
+                  );?>
+                  <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/includes/header/vk.html"
+                      )
+                  );?>
+                </div>
               </div>
             </div>
           </div>
           <div class="header__left">
             <div class="header__town">
-              <h5 class="header__town__current">Набережные Челны</h5><a class="header__town__address" href="#">бул. Г. Камала, 24а (27/04 а)</a>
+              <h5 class="header__town__current">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/includes/header/city.html"
+                  )
+                );?>
+              </h5>
+              <a class="header__town__address" href="#">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/includes/header/address.html"
+                  )
+                );?>
+              </a>
             </div>
-            <div class="header__phone"><a class="header__phone__number" href="tel:88552202726">8 8552 20 27 26</a>
+            <div class="header__phone">
+              <a class="header__phone__number" href="tel:<?include($_SERVER["DOCUMENT_ROOT"] . "/includes/common/phone.html")?>">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/includes/common/phone.html"
+                  )
+                );?>
+              </a>
               <button class="dental-btn header__phone__btn" data-toggle="modal" data-target="#feedbackModal">Заказать звонок</button>
             </div>
-            <div class="header__social"><a class="header__social__link instagram-link" href="#"></a><a class="header__social__link vk-link" href="#"></a></div>
+            <?$APPLICATION->IncludeComponent("bitrix:news.list","socials",Array(
+              "DISPLAY_DATE" => "Y",
+              "DISPLAY_NAME" => "Y",
+              "DISPLAY_PICTURE" => "Y",
+              "DISPLAY_PREVIEW_TEXT" => "Y",
+              "AJAX_MODE" => "Y",
+              "IBLOCK_TYPE" => "main",
+              "IBLOCK_ID" => "1",
+              "NEWS_COUNT" => "20",
+              "SORT_BY1" => "ID",
+              "SORT_ORDER1" => "ASC",
+              "SORT_BY2" => "SORT",
+              "SORT_ORDER2" => "ASC",
+              "FILTER_NAME" => "",
+              "FIELD_CODE" => Array("CODE"),
+              "PROPERTY_CODE" => Array("LINK"),
+              "CHECK_DATES" => "Y",
+              "DETAIL_URL" => "",
+              "PREVIEW_TRUNCATE_LEN" => "",
+              "ACTIVE_DATE_FORMAT" => "d.m.Y",
+              "SET_TITLE" => "N",
+              "SET_BROWSER_TITLE" => "Y",
+              "SET_META_KEYWORDS" => "Y",
+              "SET_META_DESCRIPTION" => "Y",
+              "SET_LAST_MODIFIED" => "Y",
+              "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+              "ADD_SECTIONS_CHAIN" => "Y",
+              "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+              "PARENT_SECTION" => "",
+              "PARENT_SECTION_CODE" => "",
+              "INCLUDE_SUBSECTIONS" => "Y",
+              "CACHE_TYPE" => "A",
+              "CACHE_TIME" => "3600",
+              "CACHE_FILTER" => "Y",
+              "CACHE_GROUPS" => "Y",
+              "DISPLAY_TOP_PAGER" => "Y",
+              "DISPLAY_BOTTOM_PAGER" => "Y",
+              "PAGER_TITLE" => "Новости",
+              "PAGER_SHOW_ALWAYS" => "Y",
+              "PAGER_TEMPLATE" => "",
+              "PAGER_DESC_NUMBERING" => "Y",
+              "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+              "PAGER_SHOW_ALL" => "Y",
+              "PAGER_BASE_LINK_ENABLE" => "Y",
+              "SET_STATUS_404" => "Y",
+              "SHOW_404" => "Y",
+              "MESSAGE_404" => "",
+              "PAGER_BASE_LINK" => "",
+              "PAGER_PARAMS_NAME" => "arrPager",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_STYLE" => "Y",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_ADDITIONAL" => ""
+              )
+            );?>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <div class="menu"><span class="bar"></span><span class="bar"></span></div>
