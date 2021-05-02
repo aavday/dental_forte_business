@@ -40,12 +40,19 @@ use Bitrix\Main\Page\Asset;
               );?>
             </a>
             <div class="collapse navbar-collapse" id="navbarHeader">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">О нас</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Услуги</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Наши клиенты</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
-              </ul>
+              <?$APPLICATION->IncludeComponent("bitrix:menu","main_menu",Array(
+                    "ROOT_MENU_TYPE" => "top", 
+                    "MAX_LEVEL" => "1", 
+                    "CHILD_MENU_TYPE" => "top", 
+                    "USE_EXT" => "Y",
+                    "DELAY" => "N",
+                    "ALLOW_MULTI_SELECT" => "Y",
+                    "MENU_CACHE_TYPE" => "N", 
+                    "MENU_CACHE_TIME" => "3600", 
+                    "MENU_CACHE_USE_GROUPS" => "Y", 
+                    "MENU_CACHE_GET_VARS" => "" 
+                )
+              );?>
               <div class="header__mobile">
                 <div class="header__town">
                   <h5 class="header__town__current">
