@@ -56,44 +56,61 @@ $APPLICATION->SetTitle('Dental Forte');
 	<div class="container">
 		<div class="services__wrapper">
 			<h4 class="subtitle subtitle-divider text-center"><span><a href="#">Услуги</a></span></h4>
-			<div class="row">
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-1.jpg" alt="Картинка услуг 1"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Бухгалтерский учет</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-2.jpg" alt="Картинка услуг 2"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Маркетинг</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-3.jpg" alt="Картинка услуг 3"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Подбор и обучение<br> персонала</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-4.jpg" alt="Картинка услуг 4"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Кадровое<br> делопроизводство</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-5.jpg" alt="Картинка услуг 5"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Администрирование</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-				<div class="col-md-6 col-xl-4"><a class="services__link" href="#">
-						<div class="services__link__img"><img src="<?=SITE_TEMPLATE_PATH?>/images/services/services-img-6.jpg" alt="Картинка услуг 6"/></div>
-						<div class="services__link__block">
-							<h3 class="services__link__title">Юридическое<br> сопровождение</h3>
-							<p class="services__link__text">Краткое описание: процесс подбора, отбора<br> и найма персонала – это постоянный процесс<br> в деятельности организации...</p>
-						</div></a></div>
-			</div>
+			<?$APPLICATION->IncludeComponent("bitrix:news.list","services",Array(
+              "DISPLAY_DATE" => "Y",
+              "DISPLAY_NAME" => "Y",
+              "DISPLAY_PICTURE" => "Y",
+              "DISPLAY_PREVIEW_TEXT" => "Y",
+              "AJAX_MODE" => "Y",
+              "IBLOCK_TYPE" => "main",
+              "IBLOCK_ID" => "2",
+              "NEWS_COUNT" => "20",
+              "SORT_BY1" => "ID",
+              "SORT_ORDER1" => "ASC",
+              "SORT_BY2" => "SORT",
+              "SORT_ORDER2" => "ASC",
+              "FILTER_NAME" => "",
+              "FIELD_CODE" => Array("NAME", "PREVIEW_TEXT", "PREVIEW_PICTURE"),
+              "PROPERTY_CODE" => Array(""),
+              "CHECK_DATES" => "Y",
+              "DETAIL_URL" => "",
+              "PREVIEW_TRUNCATE_LEN" => "",
+              "ACTIVE_DATE_FORMAT" => "d.m.Y",
+              "SET_TITLE" => "N",
+              "SET_BROWSER_TITLE" => "Y",
+              "SET_META_KEYWORDS" => "Y",
+              "SET_META_DESCRIPTION" => "Y",
+              "SET_LAST_MODIFIED" => "Y",
+              "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+              "ADD_SECTIONS_CHAIN" => "Y",
+              "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+              "PARENT_SECTION" => "",
+              "PARENT_SECTION_CODE" => "",
+              "INCLUDE_SUBSECTIONS" => "Y",
+              "CACHE_TYPE" => "A",
+              "CACHE_TIME" => "3600",
+              "CACHE_FILTER" => "Y",
+              "CACHE_GROUPS" => "Y",
+              "DISPLAY_TOP_PAGER" => "Y",
+              "DISPLAY_BOTTOM_PAGER" => "Y",
+              "PAGER_TITLE" => "Новости",
+              "PAGER_SHOW_ALWAYS" => "Y",
+              "PAGER_TEMPLATE" => "",
+              "PAGER_DESC_NUMBERING" => "Y",
+              "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+              "PAGER_SHOW_ALL" => "Y",
+              "PAGER_BASE_LINK_ENABLE" => "Y",
+              "SET_STATUS_404" => "Y",
+              "SHOW_404" => "Y",
+              "MESSAGE_404" => "",
+              "PAGER_BASE_LINK" => "",
+              "PAGER_PARAMS_NAME" => "arrPager",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_STYLE" => "Y",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_ADDITIONAL" => ""
+              )
+            );?>
 		</div>
 	</div>
 </section>
