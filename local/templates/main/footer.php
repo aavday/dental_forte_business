@@ -24,9 +24,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
-            <input class="dental-input" type="text" placeholder="Ваше имя"/>
-            <input class="dental-input" type="text" placeholder="Ваш номер телефона"/>
-            <button class="dental-btn">Заказать звонок</button>
+            <form action="" class="callback-request">
+              <input class="dental-input" type="text" placeholder="Ваше имя" name="Имя"/>
+              <input class="dental-input" type="text" placeholder="Ваш номер телефона" name="Телефон"/>
+              <button class="dental-btn">Заказать звонок</button>
+              <input type="hidden" name="subject" value="Заявка на обратный звонок">
+            </form>
           </div>
         </div>
       </div>
