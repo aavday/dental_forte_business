@@ -1,7 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 if (!empty($arResult)):
-$i = 0;
+$i = 1;
 ?>
     <div class="row">
         <?foreach ($arResult["ITEMS"] as $arItem):?>
