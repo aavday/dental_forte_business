@@ -155,36 +155,121 @@ $APPLICATION->SetTitle('Dental Forte');
 <section class="advantages">
 	<div class="container">
 		<h4 class="subtitle text-center">Преимущества работы с нами</h4>
-		<div class="row"> 
-			<div class="col-lg-4 col-xl-4">
-				<div class="advantages__item"><img class="advantages__item__img" src="<?=SITE_TEMPLATE_PATH?>/images/advantages/advantage-img-1.png" alt="Преимущества 1"/>
-					<p class="advantages__item__text">Решение вопросов<br> в кратчайшие сроки</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-xl-4">
-				<div class="advantages__item"><img class="advantages__item__img" src="<?=SITE_TEMPLATE_PATH?>/images/advantages/advantage-img-2.png" alt="Преимущества 2"/>
-					<p class="advantages__item__text"><span>100%</span><br> конфиденциальность</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-xl-4">
-				<div class="advantages__item"><img class="advantages__item__img" src="<?=SITE_TEMPLATE_PATH?>/images/advantages/advantage-img-3.png" alt="Преимущества 3"/>
-					<p class="advantages__item__text">Высокое качество<br> оказываемых услуг</p>
-				</div>
-			</div>
-		</div>
+			<?$APPLICATION->IncludeComponent("bitrix:news.list","advantages",Array(
+              "DISPLAY_DATE" => "Y",
+              "DISPLAY_NAME" => "Y",
+              "DISPLAY_PICTURE" => "Y",
+              "DISPLAY_PREVIEW_TEXT" => "Y",
+              "AJAX_MODE" => "Y",
+              "IBLOCK_TYPE" => "main",
+              "IBLOCK_ID" => "4",
+              "NEWS_COUNT" => "20",
+              "SORT_BY1" => "ID",
+              "SORT_ORDER1" => "ASC",
+              "SORT_BY2" => "SORT",
+              "SORT_ORDER2" => "ASC",
+              "FILTER_NAME" => "",
+              "FIELD_CODE" => Array("PREVIEW_TEXT", "PREVIEW_PICTURE"),
+              "PROPERTY_CODE" => Array(""),
+              "CHECK_DATES" => "Y",
+              "DETAIL_URL" => "",
+              "PREVIEW_TRUNCATE_LEN" => "",
+              "ACTIVE_DATE_FORMAT" => "d.m.Y",
+              "SET_TITLE" => "N",
+              "SET_BROWSER_TITLE" => "Y",
+              "SET_META_KEYWORDS" => "Y",
+              "SET_META_DESCRIPTION" => "Y",
+              "SET_LAST_MODIFIED" => "Y",
+              "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+              "ADD_SECTIONS_CHAIN" => "Y",
+              "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+              "PARENT_SECTION" => "",
+              "PARENT_SECTION_CODE" => "",
+              "INCLUDE_SUBSECTIONS" => "Y",
+              "CACHE_TYPE" => "A",
+              "CACHE_TIME" => "3600",
+              "CACHE_FILTER" => "Y",
+              "CACHE_GROUPS" => "Y",
+              "DISPLAY_TOP_PAGER" => "Y",
+              "DISPLAY_BOTTOM_PAGER" => "Y",
+              "PAGER_TITLE" => "Новости",
+              "PAGER_SHOW_ALWAYS" => "Y",
+              "PAGER_TEMPLATE" => "",
+              "PAGER_DESC_NUMBERING" => "Y",
+              "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+              "PAGER_SHOW_ALL" => "Y",
+              "PAGER_BASE_LINK_ENABLE" => "Y",
+              "SET_STATUS_404" => "Y",
+              "SHOW_404" => "Y",
+              "MESSAGE_404" => "",
+              "PAGER_BASE_LINK" => "",
+              "PAGER_PARAMS_NAME" => "arrPager",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_STYLE" => "Y",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_ADDITIONAL" => ""
+              )
+            );?>
 	</div>
 </section>
 <section class="partners">
 	<div class="container">  
 		<h4 class="subtitle subtitle-divider text-center"><span><a href="#">Наши клиенты</a></span></h4>
-		<div class="owl-carousel owl-theme" id="partner-slider">
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-1.png" alt="Лого партнера 1"/></div>
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-2.png" alt="Лого партнера 2"/></div>
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-3.png" alt="Лого партнера 3"/></div>
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-1.png" alt="Лого партнера 1"/></div>
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-2.png" alt="Лого партнера 2"/></div>
-			<div class="item"><img class="partners-img" src="<?=SITE_TEMPLATE_PATH?>/images/partners/partners-logo-3.png" alt="Лого партнера 3"/></div>
-		</div>
+			<?$APPLICATION->IncludeComponent("bitrix:news.list","clients",Array(
+              "DISPLAY_DATE" => "Y",
+              "DISPLAY_NAME" => "Y",
+              "DISPLAY_PICTURE" => "Y",
+              "DISPLAY_PREVIEW_TEXT" => "Y",
+              "AJAX_MODE" => "Y",
+              "IBLOCK_TYPE" => "main",
+              "IBLOCK_ID" => "5",
+              "NEWS_COUNT" => "20",
+              "SORT_BY1" => "ID",
+              "SORT_ORDER1" => "ASC",
+              "SORT_BY2" => "SORT",
+              "SORT_ORDER2" => "ASC",
+              "FILTER_NAME" => "",
+              "FIELD_CODE" => Array("PREVIEW_PICTURE"),
+              "PROPERTY_CODE" => Array(""),
+              "CHECK_DATES" => "Y",
+              "DETAIL_URL" => "",
+              "PREVIEW_TRUNCATE_LEN" => "",
+              "ACTIVE_DATE_FORMAT" => "d.m.Y",
+              "SET_TITLE" => "N",
+              "SET_BROWSER_TITLE" => "Y",
+              "SET_META_KEYWORDS" => "Y",
+              "SET_META_DESCRIPTION" => "Y",
+              "SET_LAST_MODIFIED" => "Y",
+              "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+              "ADD_SECTIONS_CHAIN" => "Y",
+              "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+              "PARENT_SECTION" => "",
+              "PARENT_SECTION_CODE" => "",
+              "INCLUDE_SUBSECTIONS" => "Y",
+              "CACHE_TYPE" => "A",
+              "CACHE_TIME" => "3600",
+              "CACHE_FILTER" => "Y",
+              "CACHE_GROUPS" => "Y",
+              "DISPLAY_TOP_PAGER" => "Y",
+              "DISPLAY_BOTTOM_PAGER" => "Y",
+              "PAGER_TITLE" => "Новости",
+              "PAGER_SHOW_ALWAYS" => "Y",
+              "PAGER_TEMPLATE" => "",
+              "PAGER_DESC_NUMBERING" => "Y",
+              "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+              "PAGER_SHOW_ALL" => "Y",
+              "PAGER_BASE_LINK_ENABLE" => "Y",
+              "SET_STATUS_404" => "Y",
+              "SHOW_404" => "Y",
+              "MESSAGE_404" => "",
+              "PAGER_BASE_LINK" => "",
+              "PAGER_PARAMS_NAME" => "arrPager",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_STYLE" => "Y",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_ADDITIONAL" => ""
+              )
+            );?>
 	</div>
 </section>
 <section class="contact">
