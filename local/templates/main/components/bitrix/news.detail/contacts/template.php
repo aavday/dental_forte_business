@@ -3,8 +3,6 @@
 if (!empty($arResult)):
 ?>
     <section class="contact">
-        <?$this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_EDIT'))?>
-        <?$this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_DELETE'))?>
         <div class="container">
             <div class="contact__block">
                 <h3 class="contact__block__title">Контакты</h3>

@@ -2,8 +2,6 @@
 <?
 if (!empty($arResult)):
 ?>
-    <?$this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_EDIT'))?>
-    <?$this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_DELETE'))?>
     <section class="about">
         <div class="container">
             <h4 class="subtitle subtitle-mobile"><span><a href="#">О компании</a></span></h4>

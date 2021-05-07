@@ -2,8 +2,6 @@
 <?
 if (!empty($arResult)):
 ?>
-    <?$this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_EDIT'))?>
-    <?$this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_DELETE'))?>
     <div class="header__left">
         <div class="header__town">
             <h5 class="header__town__current">
