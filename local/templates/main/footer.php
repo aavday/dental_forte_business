@@ -26,7 +26,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
             "PROPERTY_CODE" => Array("COPYRIGHT"),
             "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
             "DETAIL_URL" => "",
-            "SET_TITLE" => "Y",
+            "SET_TITLE" => "N",
             "SET_CANONICAL_URL" => "Y",
             "SET_BROWSER_TITLE" => "Y",
             "BROWSER_TITLE" => "-",
